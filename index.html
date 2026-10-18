@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#fff8f3">
+  <title>Холостяк 15 · Карта експерта</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌹%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Marck+Script&family=Unbounded:wght@700;900&display=swap&subset=cyrillic" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-row">
+      <div class="brand">ХОЛОСТЯК <b>15</b></div>
+      <div class="status" id="status" title=""><i class="dot"></i><span></span></div>
+      <button class="icon-btn" id="menuBtn" type="button" aria-label="Налаштування">⚙</button>
+    </div>
+    <div class="players" id="players"></div>
+  </header>
+
+  <div class="banner" id="banner" hidden></div>
+
+  <main id="app" class="sheet"></main>
+
+  <nav class="tabs" id="tabs" aria-label="Сторінки"></nav>
+
+  <dialog id="joinDlg" class="dlg">
+    <form id="joinForm" method="dialog">
+      <h2>Заходимо у кімнату 🌹</h2>
+      <p class="muted">Ви обоє вводите однаковий код кімнати й свої імена — і бачите картки одне одного наживо.</p>
+      <label>Код кімнати
+        <input id="roomInput" required maxlength="40" autocomplete="off" autocapitalize="none" spellcheck="false">
+      </label>
+      <label>Твоє ім’я
+        <input id="nameInput" required maxlength="30" autocomplete="off">
+      </label>
+      <button class="primary" type="submit">Увійти</button>
+    </form>
+  </dialog>
+
+  <dialog id="menuDlg" class="dlg">
+    <h2>Налаштування</h2>
+    <p class="muted" id="menuInfo"></p>
+    <div class="dlg-actions">
+      <button class="primary" id="copyLinkBtn" type="button">Скопіювати посилання-запрошення</button>
+      <button id="changeBtn" type="button">Змінити ім’я / кімнату</button>
+      <button class="danger" id="resetBtn" type="button">Очистити мою картку</button>
+      <button id="closeMenuBtn" type="button">Закрити</button>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" hidden></div>
+  <noscript><p style="padding:24px">Потрібен JavaScript 🙈</p></noscript>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
